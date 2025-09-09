@@ -1,23 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    /* Body styling */
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f6f9;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      min-height: 100vh;
+      padding: 40px 20px;
+    }
+
+    /* Heading */
+    h1 {
+      margin-bottom: 30px;
+      color: #333;
+    }
+
+    /* Container for links */
+    .link-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 15px;
+      width: 100%;
+      max-width: 800px;
+    }
+
+    /* Styling for links */
+    a {
+      text-decoration: none;
+      background: #ffffff;
+      padding: 15px 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      text-align: center;
+      font-size: 16px;
+      font-weight: 500;
+      color: #333;
+      transition: all 0.3s ease;
+      display: block;
+    }
+
+    /* Hover effect */
+    a:hover {
+      background: #4caf50;
+      color: white;
+      transform: translateY(-4px);
+      box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+    }
+
+    /* Mobile responsive */
+    @media(max-width: 500px) {
+      a {
+        font-size: 14px;
+        padding: 12px;
+      }
+    }
+  </style>
 </head>
 <body>
+  <h1>My Projects</h1>
+  <div class="link-container">
     <a href="./Bill/index.html">Bill</a>
-    <a href="./card/index.html">Card</a>
-    <a href="./imgarray/index.html">image</a>
-    <a href="./login/index.html">login</a>
-    <a href="./login/index2.html">login2</a>
-    <a href="./maxandmin/index.html">maxandmin</a>
-    <a href="./maxandmin/index2.html">maxandmin2</a>
-    <a href="./productcard/index.html">product</a>
+    <a href="./card/index.html">Card</a>  
+    <a href="./imgarray/index.html">Image</a>
+    <a href="./login/index.html">Login</a>
+    <a href="./login/index2.html">Login2</a>
+    <a href="./maxandmin/index.html">Max and Min</a>
+    <a href="./maxandmin/index2.html">Max and Min 2</a>
+    <a href="./productcard/index.html">Product</a>
     <a href="./student name/index.html">Student Name</a>
     <a href="./studentgrade/index.html">Student Grade</a>
-    <a href="./Studentnamebyuser/index.html">Student name by user</a>
+    <a href="./Studentnamebyuser/index.html">Student Name by User</a>
     <a href="./swap/index.html">Swap</a>
-    
+  </div>
 </body>
 </html>

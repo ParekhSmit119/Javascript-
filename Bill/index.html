@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="number" id="Salary">
+    <button onclick="getsalary()">Enter</button> <br>
+    <h1 id="Salary1">Your Salary is :-</h1>
+    <h1 id="Salary2">Your Intrest of Salary is :-</h1>
+    
+    <script>
+        function getsalary(){
+            let input =  document.getElementById("Salary");
+            let Salary = Number(input.value);
+            let Salary1= document.getElementById("Salary1");
+            let Salary2 = document.getElementById("Salary2");
+
+            Salary1.innerText = "Your Salary is :-"+Salary;
+            let total = Salary +(Salary * 0.10);
+            Salary2.innerText = "Your Intrest of Salary is :-"+ total;
+            input.value = "";
+        }
+    </script>
+</body>
+</html>

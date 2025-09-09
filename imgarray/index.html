@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+     #main {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+      padding: 20px;
+    }
+    #main img {
+      width: 250px;
+      height: auto;
+      border-radius: 10px;
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+      transition: 0.5s;
+    }
+    #main img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 8px 16px rgba(0,0,0,0.5);
+      }
+</style>
+<body>
+    <div id="main">
+
+    </div>
+
+    <script>
+        let imgAraay = ["https://cdn.dnaindia.com/sites/default/files/styles/full/public/2024/10/07/2656435-1.jpg",
+        "https://images.pexels.com/photos/30149469/pexels-photo-30149469/free-photo-of-sleek-black-sports-car-on-an-empty-street.jpeg",
+        "https://i.pinimg.com/736x/fd/98/a8/fd98a8532b48087293ff2a97b5fdee4b.jpg",
+        "https://static.vecteezy.com/system/resources/thumbnails/023/977/547/small/front-view-dark-silhouette-of-a-modern-luxury-black-car-isolated-on-black-background-ai-generated-free-photo.jpg",
+        "https://images.pexels.com/photos/4141962/pexels-photo-4141962.jpeg?cs=srgb&dl=pexels-lynxexotics-4141962.jpg&fm=jpg",
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTq02w0-6y__tJP7I3198PKh42z_qPkZIrDZw&s",
+        "https://m.media-amazon.com/images/I/919grjjqvTL.jpg",
+        "https://imgd.aeplcdn.com/600x600/n/cw/ec/206192/defender-exterior-front-view.jpeg?isig=0&wm=0",
+        "https://i1.pickpik.com/photos/231/225/87/america-classic-car-car-vintage-preview.jpg",
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQyhZYuOmg_VnJqS78xHJnU0qBOSsSUlVA1zg&s"];
+        let i ;
+        for(i = 0; i < imgAraay.length; i++){
+            document.getElementById("main").innerHTML += `<img src="${imgAraay[i]}">`
+        }
+    </script>
+</body>
+</html>

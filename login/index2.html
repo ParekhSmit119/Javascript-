@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background: linear-gradient(135deg, #74b9ff, #0984e3);
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+    .h1{
+        position: absolute;
+        top: 0%;
+        font-size: 30px;
+        text-transform: uppercase;
+    }
+
+    #main {
+        background: #fff;
+        padding: 30px;
+        border-radius: 12px;
+        box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
+        width: 320px;
+        text-align: center;
+    }
+
+    h1 {
+        margin-bottom: 20px;
+        color: #2d3436;
+    }
+
+    input[type="text"],
+    input[type="password"] {
+        width: 90%;
+        padding: 10px;
+        margin: 10px 0;
+        border: 2.5px solid rgb(116, 112, 112);
+        border-radius: 8px;
+        transition: 0.3s;
+    }
+
+    button {
+        background: #0984e3;
+        color: white;
+        padding: 10px 15px;
+        margin: 8px;
+        border-radius: 8px;
+        cursor: pointer;
+        font-size: 16px;
+        transition: 0.3s;
+    }
+    button:hover {
+        background: #42a1ff;
+    }
+
+</style>
+<body>
+    <div id="main">
+    <h1>Log In !</h1>
+    <input type="text" id="username" placeholder="Enter valid Username !"> 
+    <input type="password" id="password" placeholder="Enter valid password !">
+    
+    <button onclick="login()">Log in</button>
+    <button onclick="Forget()">Forget Password</button>
+    </div>
+
+    <script>
+        let main = document.getElementById("main")
+        let username1 ="admin"
+        let password1 ="123"
+
+
+        function login(){
+            let username =document.getElementById("username").value
+            let password = document.getElementById("password").value
+            if(username == username1 && password == password1){
+                alert("Login Successfull")
+            }
+            else{
+                alert("Usernmae or Password is Wrong !")
+            }  
+        }
+
+        function Forget(){
+            main.innerHTML = `
+             <h1>Reset Password !</h1>
+            <input type="password" id="oldpassword" placeholder="Enter the correct old password !">
+            <button onclick="check()">confirm</button> `
+            }
+        function check(){
+            let oldpassword = document.getElementById("oldpassword").value
+        
+             if(oldpassword == password1){
+                alert("Now you can change your password !")
+                main.innerHTML = `
+                <h1>Reset Password !</h1>
+                <input type="password" id="newpassword" placeholder="Enter the new password !">
+                <input type="password" id="newpassword1" placeholder="Re-enter the new password !">
+                <button onclick="change()">confirm</button> `
+             }
+             else{
+                alert("Old password is wrong !")
+             }
+        }
+        function change(){
+            let newpassword = document.getElementById("newpassword").value
+            let newpassword1 = document.getElementById("newpassword1").value
+            if(newpassword == newpassword1){
+                
+                password1 = newpassword1
+
+                alert("Password Changed Successfully !")
+                main.innerHTML = `
+                <h1>Log In !</h1>
+    <input type="text" id="username" placeholder="Enter valid Username !"> 
+    <input type="password" id="password" placeholder="Enter valid password !">
+    
+    <button onclick="login()">Log in</button>
+    <button onclick="Forget()">Forget Password</button>
+                `
+            }
+            else{
+                alert("Password is not same !")
+            }
+        }
+    </script>
+</body>
+</html>

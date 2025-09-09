@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="number" placeholder="Enter the first value" id="first"><br><br>
+    <input type="number" placeholder="Enter the Second value" id="second"><br><br>
+    <button onclick="getswap()">Enter</button>
+    <h1 id="first1">First Value :</h1>
+    <h1 id="second2">Second Value :</h1>
+
+    <script>
+        function getswap() {
+            let first = document.getElementById("first").value;
+            let second = document.getElementById("second").value;
+            let temp = first;
+            first = second;
+            second = temp;
+            first1.innerHTML ="First value is :" + first;
+            second2.innerHTML ="Second value is :" +second;
+        }
+    </script>
+</body>
+</html>

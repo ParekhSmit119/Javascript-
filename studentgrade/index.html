@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="number" placeholder="Enter the Marks" id="Marks">
+    <button onclick="getgrade()">Get Grade</button>
+
+    <h1>Grade</h1>
+    <script>
+        function getgrade(){
+            let input = document.getElementById("Marks");
+            let Marks = document.getElementById("Marks").value;
+
+            if(Marks >= 90){
+                document.write("Grade A+")
+            }
+            else if(Marks >= 80){
+                document.write("Grade A")
+            }
+            else if(Marks >= 70){
+                document.write("Grade B+")
+            }
+            else if(Marks >= 70){
+                document.write("Grade B")
+            }
+            else if(Marks >= 60){
+                document.write("Grade c+")
+            }
+            else if(Marks >= 50){
+                document.write("Grade c")
+            }
+            else if(Marks >= 40){
+                document.write("Grade d")
+            }
+            else if(Marks < 40){
+                document.write("You Don't want to Study");
+            }
+            
+
+            
+            
+        }
+    </script>
+</body>
+</html>

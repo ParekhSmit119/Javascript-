@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background: linear-gradient(135deg, #74b9ff, #0984e3);
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+    .h1{
+        position: absolute;
+        top: 0%;
+        font-size: 30px;
+        text-transform: uppercase;
+    }
+
+    #main {
+        background: #fff;
+        padding: 30px;
+        border-radius: 12px;
+        box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
+        width: 320px;
+        text-align: center;
+    }
+
+    h1 {
+        margin-bottom: 20px;
+        color: #2d3436;
+    }
+
+    input[type="text"],
+    input[type="password"] {
+        width: 90%;
+        padding: 10px;
+        margin: 10px 0;
+        border: 2.5px solid rgb(116, 112, 112);
+        border-radius: 8px;
+        transition: 0.3s;
+    }
+
+    button {
+        background: #0984e3;
+        color: white;
+        padding: 10px 15px;
+        margin: 8px;
+        border-radius: 8px;
+        cursor: pointer;
+        font-size: 16px;
+        transition: 0.3s;
+    }
+    button:hover {
+        background: #42a1ff;
+    }
+
+</style>
+
+
+<body>
+    <div id="main">
+        <h1>LogIn</h1>
+        <input type="text" id="username">
+        <input type="password" id="password"> <br> <br>
+
+        <button onclick="logIn()">LogIn</button>
+        <button onclick="forgotPass()">Forgot password ?</button>
+    </div>
+
+
+    <script>
+        let main = document.getElementById("main")
+
+        let username = "admin"
+        let Password = "123"
+
+        function logIn() {
+            let currentUsername = document.getElementById("username").value
+            let currentPassword = document.getElementById("password").value
+
+            if (currentUsername == username && currentPassword == Password) {
+                alert("Logged In !")
+            }
+            else {
+                alert("Username & password are dose not match !")
+            }
+        }
+
+        function forgotPass() {
+            main.innerHTML = `
+                <h1>Reset password</h1>
+                <input type="password" id="oldPass">
+                <input type="password" id="newPass1">
+                <input type="password" id="newPass2">
+                <button onclick="checkPass()">Confrim</button>
+
+            `
+        }
+
+        function checkPass(){
+            let oldPass = document.getElementById("oldPass").value
+            let newPass1 = document.getElementById("newPass1").value
+            let newPass2 = document.getElementById("newPass2").value
+
+            if(oldPass == Password){
+                alert("Now, you can change your password !")
+                if(newPass1 != newPass2){
+                    alert("password dose not match !")
+                }
+                else{
+                    Password = newPass1
+                    alert("password changed !")
+                    main.innerHTML = `
+                        <h1>LogIn</h1>
+                        <input type="text" id="username">
+                        <input type="password" id="password"> <br> <br>
+
+                        <button onclick="logIn()">LogIn</button>
+                        <button onclick="forgotPass()">Forgot password ?</button>
+                    
+                    `
+                }
+            }
+            else{
+                alert("Old password is not valid !")
+            }
+        }
+
+    </script>
+</body>
+
+</html>
